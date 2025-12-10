@@ -41,6 +41,12 @@ class CheckoutSolution:
                 for i in range(discounts):
                     total += items[letter] * amount
 
+                    # remove actual letter
+                    for i in range(amount):
+                        s = "".join(v)
+                        ind = s.find(letter)
+                        del v[ind]
+
                     for i in range(amountFree):
                         s = "".join(v)
                         ind = s.find(freeLetter)
