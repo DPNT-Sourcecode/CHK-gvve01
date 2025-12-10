@@ -10,9 +10,15 @@ class CheckoutSolution:
             'D': 15
         }
 
-        if skus not in items:
-            return -1
-        else:
-            return items[skus]
+        
+        total = 0
+        for char in skus:
+            if skus not in items:
+                return -1
+            else:
+                total += items[skus]
+
+        return total
+
 
 
