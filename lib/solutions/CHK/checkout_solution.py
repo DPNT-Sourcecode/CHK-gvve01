@@ -52,8 +52,8 @@ class CheckoutSolution:
                 total += cost
 
                 # remove the items
-                for i in range(len(sorted_r)-1, 0, -1):
-                    removing_letter = sorted_r[i]
+                for i in range(require_amount):
+                    removing_letter = sorted_r[-(i+1)]
                     s = "".join(v)
                     ind = s.find(removing_letter)
                     del v[ind]
@@ -143,7 +143,7 @@ class CheckoutSolution:
 
 c = CheckoutSolution()
 
-print(c.checkout("ZTX"))
+print(c.checkout("ZTXZTX"))
 
 
 
