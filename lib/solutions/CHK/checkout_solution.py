@@ -96,7 +96,7 @@ class CheckoutSolution:
 
         applyDiscount("H", 10, 80)
         applyDiscount("H", 5, 45)
-        applyDiscount("K", 2, 50)
+        applyDiscount("K", 2, 150)
         applyFree("N", 3, "M")
         applyDiscount("P", 5, 200)
         applyFree("R", 3, "Q")
@@ -120,7 +120,7 @@ class CheckoutSolution:
 
 c = CheckoutSolution()
 
-print(c.checkout("FFFFFF"))
+print(c.checkout("KK"))
 
 
 
@@ -157,4 +157,5 @@ print(c.checkout("FFFFFF"))
         #             s = "".join(v)
         #             ind = s.find("B")
         #             del v[ind]
+
 
