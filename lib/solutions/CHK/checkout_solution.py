@@ -118,9 +118,9 @@ class CheckoutSolution:
         return total
 
 
-# c = CheckoutSolution()
+c = CheckoutSolution()
 
-# print(c.checkout("FFFFFF"))
+print(c.checkout("FFFFFF"))
 
 
 
@@ -157,3 +157,4 @@ class CheckoutSolution:
         #             s = "".join(v)
         #             ind = s.find("B")
         #             del v[ind]
+
