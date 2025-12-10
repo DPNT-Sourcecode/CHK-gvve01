@@ -43,8 +43,9 @@ class CheckoutSolution:
             items_list = []
             for item in group1:
                 if item in v:
-                    current_amount += 1
-                    items_list.append(item)
+                    current_amount += v.count(item)
+                    # items_list.append(item)
+                    items_list += ([item] * v.count(item))
             
             if current_amount >= require_amount:
                 print(items_list)
@@ -143,7 +144,7 @@ class CheckoutSolution:
 
 c = CheckoutSolution()
 
-print(c.checkout("ZTXZTX"))
+print(c.checkout("ZZZ"))
 
 
 
@@ -180,3 +181,4 @@ print(c.checkout("ZTXZTX"))
         #             s = "".join(v)
         #             ind = s.find("B")
         #             del v[ind]
+
