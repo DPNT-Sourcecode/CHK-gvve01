@@ -13,7 +13,7 @@ class CheckoutSolution:
         
         total = 0
 
-        for char in skus:
+        for i, char in enumerate(skus):
             print(char)
             if char not in items:
                 return -1
@@ -23,6 +23,6 @@ class CheckoutSolution:
         return total
 
 
-# c = CheckoutSolution()
+c = CheckoutSolution()
 
-# print(c.checkout("AABX"))
+print(c.checkout("AABX"))
