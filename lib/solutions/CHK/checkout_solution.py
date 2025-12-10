@@ -11,11 +11,16 @@ class CheckoutSolution:
         }
 
         v = skus
-        
+        total = 0
         # get offers
         a_count = skus.count("A")
         if a_count % 3 == 0:
-            print("Discount")   
+            for i in range(a_count//3):
+                total += 150
+
+                # find an A
+                indexs = v.find("A")
+                print(indexs)
 
         # remove the applied offers
 
