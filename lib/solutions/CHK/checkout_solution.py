@@ -46,6 +46,8 @@ class CheckoutSolution:
                     for i in range(amount):
                         s = "".join(v)
                         ind = s.find(letter)
+                        if ind == -1:
+                            continue
                         del v[ind]
 
                     for i in range(amountFree):
@@ -114,4 +116,4 @@ class CheckoutSolution:
 
 c = CheckoutSolution()
 
-print(c.checkout("FFF"))
+print(c.checkout("FFFF"))
