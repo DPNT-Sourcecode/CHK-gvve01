@@ -7,7 +7,8 @@ class CheckoutSolution:
             'A': 50,
             'B': 30,
             'C': 20,
-            'D': 15
+            'D': 15,
+            'E': 40
         }
 
         v = list(skus)
@@ -28,6 +29,21 @@ class CheckoutSolution:
                     for i in range(amount):
                         s = "".join(v)
                         ind = s.find(letter)
+                        del v[ind]
+
+        def applyFree(letter, amount, freeLetter, amountFree = 1):
+            count = v.count(letter)
+            discounts = 0
+            if count >= amount:
+                discounts = count // amount
+            
+            if discounts > 0:
+                for i in range(discounts):
+                    total += cost * amount
+
+                    for i in range(amountFree):
+                        s = "".join(v)
+                        ind = s.find(freeLetter)
                         del v[ind]
 
         # # Getting A offer
@@ -63,7 +79,9 @@ class CheckoutSolution:
         #             ind = s.find("B")
         #             del v[ind]
 
+        applyDiscount("A", 5, 200)
         applyDiscount("A", 3, 130)
+        applyFree("E", 2, "B")
         applyDiscount("B", 2, 45)
 
         if len(v) == 0:
@@ -82,3 +100,4 @@ class CheckoutSolution:
 c = CheckoutSolution()
 
 print(c.checkout("AAABBA"))
+
