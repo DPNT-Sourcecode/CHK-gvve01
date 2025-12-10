@@ -38,6 +38,7 @@ class CheckoutSolution:
         group1 = ('S', 'T', 'X', 'Y', 'Z')
 
         def applyGroupDiscount(group, require_amount, cost):
+            nonlocal total
             current_amount = 0
             items_list = []
             for item in group1:
@@ -48,6 +49,20 @@ class CheckoutSolution:
             if current_amount >= require_amount:
                 print(items_list)
                 sorted_r = sorted(items_list, key=lambda x: items[x])
+                total += cost
+
+                # remove the items
+                for i in range(len(sorted_r)-1, 0, -1):
+                    removing_letter = sorted_r[i]
+                    s = "".join(v)
+                    ind = s.find(removing_letter)
+                    del v[ind]
+                
+                applyGroupDiscount(group, require_amount, cost)
+            
+            else:
+                return
+
         
         def applyDiscount(letter, amount, cost):
             nonlocal total
@@ -165,10 +180,3 @@ print(c.checkout("ZTX"))
         #             s = "".join(v)
         #             ind = s.find("B")
         #             del v[ind]
-
-
-
-
-
-
-
