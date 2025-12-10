@@ -91,7 +91,19 @@ class CheckoutSolution:
         applyDiscount("B", 2, 45)
         print(total)
         applyFree("F", 2, "F")
-        print("F: ", total)
+        print(total)
+
+
+        applyDiscount("H", 10, 80)
+        applyDiscount("H", 5, 45)
+        applyDiscount("K", 2, 50)
+        applyFree("N", 3, "M")
+        applyDiscount("P", 5, 200)
+        applyFree("R", 3, "Q")
+        applyDiscount("Q", 3, 80)
+        applyFree("U", 3, "U")
+        applyDiscount("V", 3, 130)
+        applyDiscount("V", 2, 90)
 
         if len(v) == 0:
             return total
