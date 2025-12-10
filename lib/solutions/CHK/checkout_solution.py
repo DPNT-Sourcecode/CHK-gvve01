@@ -10,19 +10,24 @@ class CheckoutSolution:
             'D': 15
         }
 
-        v = skus.split()
-        print(v)
+        v = list(skus)
+        
         total = 0
         # get offers
 
 
-        a_count = skus.count("A")
+        a_count = v.count("A")
         if a_count % 3 == 0:
             for i in range(a_count//3):
                 total += 150
 
-                # find an A
-                for i in range(len(v)):
+                # Remove 3 As
+                for i in range(3):
+                    s = "".join(v)
+                    ind = s.find("A")
+                    del v[ind]
+                    print(v)
+
 
 
                 
@@ -44,4 +49,5 @@ class CheckoutSolution:
 c = CheckoutSolution()
 
 print(c.checkout("AAABX"))
+
 
