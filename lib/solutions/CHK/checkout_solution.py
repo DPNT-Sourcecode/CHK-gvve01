@@ -50,6 +50,8 @@ class CheckoutSolution:
                     for i in range(amountFree):
                         s = "".join(v)
                         ind = s.find(freeLetter)
+                        if ind == -1:
+                            continue
                         del v[ind]
                         print(v)
 
@@ -110,4 +112,4 @@ class CheckoutSolution:
 
 c = CheckoutSolution()
 
-print(c.checkout("BEE"))
+print(c.checkout("EEB"))
