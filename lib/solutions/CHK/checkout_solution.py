@@ -8,7 +8,8 @@ class CheckoutSolution:
             'B': 30,
             'C': 20,
             'D': 15,
-            'E': 40
+            'E': 40,
+            'F': 10
         }
 
         v = list(skus)
@@ -96,6 +97,7 @@ class CheckoutSolution:
         print(total)
         applyDiscount("B", 2, 45)
         print(total)
+        applyFree("F", 2, "F")
 
         if len(v) == 0:
             return total
@@ -112,4 +114,4 @@ class CheckoutSolution:
 
 c = CheckoutSolution()
 
-print(c.checkout("EEB"))
+print(c.checkout("FFF"))
