@@ -12,13 +12,17 @@ class CheckoutSolution:
 
         
         total = 0
+
         for char in skus:
-            if skus not in items:
+            print(char)
+            if char not in items:
                 return -1
             else:
-                total += items[skus]
+                total += items[char]
 
         return total
 
 
+# c = CheckoutSolution()
 
+# print(c.checkout("AABX"))
