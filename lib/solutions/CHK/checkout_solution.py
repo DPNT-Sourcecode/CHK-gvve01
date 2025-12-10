@@ -9,7 +9,27 @@ class CheckoutSolution:
             'C': 20,
             'D': 15,
             'E': 40,
-            'F': 10
+            'F': 10,
+            "G": 20,
+            "H": 10,
+            "I": 35,
+            "J": 60,
+            "K": 80,
+            "L": 90,
+            "M": 15,
+            "N": 40,
+            "O": 10,
+            "P": 50,
+            "Q": 30,
+            "R": 50,
+            "S": 30,
+            "T": 20,
+            "U": 40,
+            "V": 50,
+            "W": 20,
+            "X": 90,
+            "Y": 10,
+            "Z": 50
         }
 
         v = list(skus)
@@ -62,7 +82,38 @@ class CheckoutSolution:
                     if (letter not in v) or (freeLetter not in v):
                         return
 
-        # # Getting A offer
+        applyDiscount("A", 5, 200)
+        print(total)
+        applyDiscount("A", 3, 130)
+        print(total)
+        applyFree("E", 2, "B")
+        print(total)
+        applyDiscount("B", 2, 45)
+        print(total)
+        applyFree("F", 2, "F")
+        print("F: ", total)
+
+        if len(v) == 0:
+            return total
+        # do rest
+        for char in v:
+            # print(char)
+            if char not in items:
+                return -1
+            else:
+                total += items[char]
+
+        return total
+
+
+# c = CheckoutSolution()
+
+# print(c.checkout("FFFFFF"))
+
+
+
+
+# # Getting A offer
         # a_count = v.count("A")
         # a_discounts = 0
         # if a_count >= 3:
@@ -94,32 +145,3 @@ class CheckoutSolution:
         #             s = "".join(v)
         #             ind = s.find("B")
         #             del v[ind]
-
-        applyDiscount("A", 5, 200)
-        print(total)
-        applyDiscount("A", 3, 130)
-        print(total)
-        applyFree("E", 2, "B")
-        print(total)
-        applyDiscount("B", 2, 45)
-        print(total)
-        applyFree("F", 2, "F")
-        print("F: ", total)
-
-        if len(v) == 0:
-            return total
-        # do rest
-        for char in v:
-            # print(char)
-            if char not in items:
-                return -1
-            else:
-                total += items[char]
-
-        return total
-
-
-# c = CheckoutSolution()
-
-# print(c.checkout("FFFFFF"))
-
