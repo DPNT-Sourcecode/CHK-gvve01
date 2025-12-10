@@ -18,7 +18,7 @@ class CheckoutSolution:
         # Getting A offer
         a_count = v.count("A")
         a_discounts = 0
-        if a_count > 3:
+        if a_count >= 3:
             # number of discounts
             a_discounts = a_count // 3
         if a_discounts > 0:
@@ -36,9 +36,10 @@ class CheckoutSolution:
         # Getting B offer
         b_count = v.count("B")
         b_discounts = 0
-        if b_count > 
-        if (b_count % 2 == 0) and (b_count > 0):
-            for i in range(a_count//2):
+        if b_count >= 2:
+            b_discounts = b_count // 2
+        if b_discounts > 0:
+            for i in range(b_discounts):
                 total += 45
 
                 # Remove 3 As
@@ -60,6 +61,6 @@ class CheckoutSolution:
         return total
 
 
-c = CheckoutSolution()
+# c = CheckoutSolution()
 
-print(c.checkout("AAA"))
+# print(c.checkout("AAABBA"))
