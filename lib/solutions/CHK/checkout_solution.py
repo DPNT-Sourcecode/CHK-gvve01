@@ -10,11 +10,19 @@ class CheckoutSolution:
             'D': 15
         }
 
+        v = skus
         
-        total = 0
+        # get offers
+        a_count = skus.count("A")
+        if a_count % 3 == 0:
+            print("Discount")   
+
+        # remove the applied offers
+
+        # do rest
 
         for i, char in enumerate(skus):
-            print(char)
+            # print(char)
             if char not in items:
                 return -1
             else:
@@ -25,4 +33,4 @@ class CheckoutSolution:
 
 c = CheckoutSolution()
 
-print(c.checkout("AABX"))
+print(c.checkout("AAABX"))
