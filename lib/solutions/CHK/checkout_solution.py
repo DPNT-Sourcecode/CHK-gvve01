@@ -17,7 +17,7 @@ class CheckoutSolution:
 
         # Getting A offer
         a_count = v.count("A")
-        if a_count % 3 == 0:
+        if (a_count % 3 == 0) and (a_count > 0):
             for i in range(a_count//3):
                 total += 130
 
@@ -26,10 +26,11 @@ class CheckoutSolution:
                     s = "".join(v)
                     ind = s.find("A")
                     del v[ind]
+                    print(v)
 
         # Getting B offer
         b_count = v.count("B")
-        if b_count % 2 == 0:
+        if (b_count % 2 == 0) and (b_count > 0):
             for i in range(a_count//2):
                 total += 45
 
@@ -52,6 +53,6 @@ class CheckoutSolution:
         return total
 
 
-c = CheckoutSolution()
+# c = CheckoutSolution()
 
-print(c.checkout("AAABB"))
+# print(c.checkout("AAA"))
