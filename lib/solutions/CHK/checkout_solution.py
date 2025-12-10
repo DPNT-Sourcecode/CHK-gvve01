@@ -29,7 +29,7 @@ class CheckoutSolution:
 
         # Getting B offer
         b_count = v.count("B")
-        if a_count % 2 == 0:
+        if b_count % 2 == 0:
             for i in range(a_count//2):
                 total += 45
 
@@ -53,4 +53,4 @@ class CheckoutSolution:
 
 c = CheckoutSolution()
 
-print(c.checkout("AAAB"))
+print(c.checkout("AAABB"))
