@@ -35,6 +35,9 @@ class CheckoutSolution:
         v = list(skus)
         
         total = 0
+        print(['A', 'B'] in v)
+        # def applyGroupDiscount(group, price):
+
         
         def applyDiscount(letter, amount, cost):
             nonlocal total
@@ -94,6 +97,7 @@ class CheckoutSolution:
         applyDiscount("P", 5, 200)
         applyFree("R", 3, "Q")
         applyDiscount("Q", 3, 80)
+        
         applyFree("U", 3, "U")
         applyDiscount("V", 3, 130)
         applyDiscount("V", 2, 90)
@@ -113,7 +117,7 @@ class CheckoutSolution:
 
 c = CheckoutSolution()
 
-print(c.checkout("KK"))
+print(c.checkout("ABCD"))
 
 
 
@@ -150,6 +154,7 @@ print(c.checkout("KK"))
         #             s = "".join(v)
         #             ind = s.find("B")
         #             del v[ind]
+
 
 
 
