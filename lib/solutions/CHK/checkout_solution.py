@@ -15,39 +15,42 @@ class CheckoutSolution:
         total = 0
         # get offers
 
-
+        # Getting A offer
         a_count = v.count("A")
         if a_count % 3 == 0:
             for i in range(a_count//3):
-                total += 150
+                total += 130
 
                 # Remove 3 As
                 for i in range(3):
                     s = "".join(v)
                     ind = s.find("A")
                     del v[ind]
-                    print(v)
 
+        # Getting B offer
+        b_count = v.count("B")
+        if a_count % 2 == 0:
+            for i in range(a_count//2):
+                total += 45
 
+                # Remove 3 As
+                for i in range(2):
+                    s = "".join(v)
+                    ind = s.find("B")
+                    del v[ind]
 
-                
-
-        # remove the applied offers
 
         # do rest
+        for char in v:
+            # print(char)
+            if char not in items:
+                return -1
+            else:
+                total += items[char]
 
-        # for i, char in enumerate(skus):
-        #     # print(char)
-        #     if char not in items:
-        #         return -1
-        #     else:
-        #         total += items[char]
-
-        # return total
+        return total
 
 
 c = CheckoutSolution()
 
-print(c.checkout("AAABX"))
-
-
+print(c.checkout("AAAB"))
