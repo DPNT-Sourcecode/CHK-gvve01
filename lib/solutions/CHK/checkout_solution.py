@@ -37,18 +37,18 @@ class CheckoutSolution:
         total = 0
         group1 = ('S', 'T', 'X', 'Y', 'Z')
 
-        require_amount = 3
-        current_amount = 0
-        items_list = []
-        for item in group1:
-            if item in v:
-                current_amount += 1
-                items_list.append(item)
-        
-        if current_amount >= require_amount:
-            print(items_list)
-            current_amount
-        # def applyGroupDiscount(group, price):
+        def applyGroupDiscount(group, require_amount, cost):
+            current_amount = 0
+            items_list = []
+            for item in group1:
+                if item in v:
+                    current_amount += 1
+                    items_list.append(item)
+            
+            if current_amount >= require_amount:
+                print(items_list)
+                sorted_l = items_list.sort(key=lambda x: x.lower())
+                print(sorted_l)
         
         def applyDiscount(letter, amount, cost):
             nonlocal total
@@ -96,6 +96,7 @@ class CheckoutSolution:
                     if (letter not in v) or (freeLetter not in v):
                         return
 
+        applyGroupDiscount(group1, 3, 45)
         applyDiscount("A", 5, 200)
         applyDiscount("A", 3, 130)
         applyFree("E", 2, "B")
@@ -165,6 +166,7 @@ print(c.checkout("STX"))
         #             s = "".join(v)
         #             ind = s.find("B")
         #             del v[ind]
+
 
 
 
