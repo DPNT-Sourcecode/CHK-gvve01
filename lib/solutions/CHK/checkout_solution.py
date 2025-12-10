@@ -39,7 +39,8 @@ class CheckoutSolution:
                     ind = s.find("B")
                     del v[ind]
 
-
+        if len(v) == 0:
+            return total
         # do rest
         for char in v:
             # print(char)
