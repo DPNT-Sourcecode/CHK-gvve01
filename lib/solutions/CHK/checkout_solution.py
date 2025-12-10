@@ -32,19 +32,20 @@ class CheckoutSolution:
                         del v[ind]
 
         def applyFree(letter, amount, freeLetter, amountFree = 1):
+            nonlocal total
             count = v.count(letter)
             discounts = 0
             if count >= amount:
                 discounts = count // amount
-            
             if discounts > 0:
                 for i in range(discounts):
-                    total += cost * amount
+                    total += items[letter] * amount
 
                     for i in range(amountFree):
                         s = "".join(v)
                         ind = s.find(freeLetter)
                         del v[ind]
+                        print(v)
 
         # # Getting A offer
         # a_count = v.count("A")
@@ -80,9 +81,13 @@ class CheckoutSolution:
         #             del v[ind]
 
         applyDiscount("A", 5, 200)
+        print(total)
         applyDiscount("A", 3, 130)
+        print(total)
         applyFree("E", 2, "B")
+        print(total)
         applyDiscount("B", 2, 45)
+        print(total)
 
         if len(v) == 0:
             return total
@@ -99,5 +104,4 @@ class CheckoutSolution:
 
 c = CheckoutSolution()
 
-print(c.checkout("AAABBA"))
-
+print(c.checkout("BEE"))
