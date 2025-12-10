@@ -47,8 +47,7 @@ class CheckoutSolution:
             
             if current_amount >= require_amount:
                 print(items_list)
-                sorted_l = items_list.sort(key=lambda x: x.lower())
-                print(sorted_l)
+                sorted_r = sorted(items_list, key=lambda x: items[x])
         
         def applyDiscount(letter, amount, cost):
             nonlocal total
@@ -129,7 +128,7 @@ class CheckoutSolution:
 
 c = CheckoutSolution()
 
-print(c.checkout("STX"))
+print(c.checkout("ZTX"))
 
 
 
@@ -166,6 +165,7 @@ print(c.checkout("STX"))
         #             s = "".join(v)
         #             ind = s.find("B")
         #             del v[ind]
+
 
 
 
