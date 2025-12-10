@@ -43,6 +43,9 @@ class CheckoutSolution:
                     total += items[letter] * amount
 
                     # remove actual letter
+                    # Check enough to remove
+                    if v.count(letter) < amount:
+                        return
                     for i in range(amount):
                         s = "".join(v)
                         ind = s.find(letter)
@@ -55,6 +58,10 @@ class CheckoutSolution:
                             continue
                         del v[ind]
                         print(v)
+                    
+                    print(v)
+                    if (letter not in v) or (freeLetter not in v):
+                        return
 
         # # Getting A offer
         # a_count = v.count("A")
@@ -115,3 +122,4 @@ class CheckoutSolution:
 c = CheckoutSolution()
 
 print(c.checkout("FFFF"))
+
