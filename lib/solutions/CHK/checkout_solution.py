@@ -40,12 +40,11 @@ class CheckoutSolution:
                 discounts = count // amount
             if discounts > 0:
                 for i in range(discounts):
+                    if (v.count(letter) < amount) or (v.count(freeLetter) < amountFree):
+                        return
                     total += items[letter] * amount
 
                     # remove actual letter
-                    # Check enough to remove
-                    if v.count(letter) < amount:
-                        return
                     for i in range(amount):
                         s = "".join(v)
                         ind = s.find(letter)
@@ -105,6 +104,7 @@ class CheckoutSolution:
         applyDiscount("B", 2, 45)
         print(total)
         applyFree("F", 2, "F")
+        print("F: ", total)
 
         if len(v) == 0:
             return total
@@ -119,7 +119,7 @@ class CheckoutSolution:
         return total
 
 
-c = CheckoutSolution()
+# c = CheckoutSolution()
 
-print(c.checkout("FFFF"))
+# print(c.checkout("FFFFFF"))
 
